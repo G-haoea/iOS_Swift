@@ -12,7 +12,7 @@ After I learnt some tips about Swift or the methods of using Xcode, maybe the gr
 * [BUG](https://github.com/iii17-grace/ios_Swift/wiki/BUG)    
   Some of the bugs which happened during this process. It contains the wrong grammar or the incorrect settings, etc.        
 
-* [Some point in some apps](https://github.com/iii17-grace/ios_Swift/wiki)   
+* [Some points during developing(app)](https://github.com/iii17-grace/ios_Swift/wiki)   
   Some worth code/points are recorded here.
 
 

@@ -56,7 +56,7 @@ This is about how to create a project when entering Xcode. Some basic settings a
     -Change Attributes as you want;             
     
 * **`Add an image`**    
-     The quality of pictures have been improved by Apple. So the different iPhone has the different abilities to deal with pictures. It means iPhone 2/3G/3GS can only handle 1x that the one ratio pictures, iPhone 4/4s/5/5s/6 can deal with 2x, more than iPhone 6p with 3x. That's why we need to use a website called [appicon]("appicon.co") to handle image materials.  
+     The quality of pictures have been improved by Apple. So the different iPhone has the different abilities to deal with pictures. It means iPhone 2/3G/3GS can only handle 1x that the one ratio pictures, iPhone 4/4s/5/5s/6 can deal with 2x, more than iPhone 6p with 3x. That's why we need to use a website called [appicon]("https://appicon.co/") to handle image materials.  
      Use this website to create 3 different size of images with downloading a .zip file.     
      
     -Drag specific images into empty area of folder Assets.xcassets in Xcode;   

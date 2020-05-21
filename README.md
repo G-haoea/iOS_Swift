@@ -10,7 +10,26 @@ Welcome to iostar✨
 * [BUG](https://github.com/iii17-grace/ios_Swift/wiki/BUG)         
 
 * [Applications](https://github.com/iii17-grace/ios_Swift/wiki)  
-
+d   
+d   
+d   
+d   
+d   d   
+d   
+d   
+d   
+d   
+d   
+d   
+d   
+d   
+d   
+d   
+d   
+d   
+d   
+d   
+d   
 ### Hello 
 
 

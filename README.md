@@ -56,7 +56,9 @@ This is about how to create a project when entering Xcode. Some basic settings a
     -Change Attributes as you want;             
     
 * **`Add an image`**    
-    -The quality of pictures have been improved by Apple, so the different iPhone has the different abilities to deal with pictures. That's why we need to use a website called [appIcon]("www.appIcon.com") to handle image materials;        
+    -The quality of pictures have been improved by Apple;   
+    -So the different iPhone has the different abilities to deal with pictures;    
+    -That's why we need to use a website called [appicon]("https://appicon.co/") to handle image materials;          
     -Drag specific images into empty area of folder Assets.xcassets in Xcode;   
     -Set imageView's image = specific image by Attributes inspector;   
     -Set width or length in Attributes inspector as well;  

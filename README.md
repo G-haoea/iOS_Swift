@@ -105,7 +105,42 @@ This is about how to create a project when entering Xcode. Some basic settings a
 
 <br>
 
-### Constraints   
+### Constraints  
+
+safe area: except what shows in the top and bottom of iphoneX+;
+
+Confirm a lable: x/y/width/height;
+
+Align - horizontally/vertically in container(view);
+
+Add new constraints: 4 values of distance from the nearest area;
+
+constraints to margin means the safe view;
+
+after moving elements to somewhere, a yellow line will appear, if you want to confirm the position like the yellow original line does, click update frames, or to confirm the current position, click resolve auto constraints assues and pay attention to whether the view is selected one or the whole things in current view;
+
+if we combine two items into one stack view, all constraints will disappear automatically;
+
+judge stack view(or other things)'s position: horizontally center first, then confirm 'Y';
+
+if we confirm two value of 'left value' and 'right value' we can see the length of stack view will shrink, now we need to consider the problem of priority;
+
+we can choose Distribution - Fill equally, then two items in stack view will be splided into two equal length items;
+Fill proportionally means they are splitted into items according to different contents of items;
+
+The content in the item will be centered in the Alignment like we do in word;
+
+modify two items into one width: click one, command + another one, click bottom - add new constraints - equal width/heights; OR (click one, control, moving to another one, choose a choice)
+
+set the element satify a radio between itself and view: multiple (1:7/1:3/etc.)
+
+we want to add a claim on the bottom of the page: confirm the left/right margin first, then set the text as in the center of the label, next step is to Autoshrink choose minimum font scale to let texts fill with the proper label;
+
+command + D: duplicates one or click, keep option, three keys move - release hand first, then release option;
+
+if we use option which we have mentioned above to duplicate a button, and the original button has cnnected with an action, then the second button will has the same connection with this action as well;
+
+remove the items from a stack view: just move them out of the stack view OR choose unembed;
 
 <br>
 

@@ -21,6 +21,8 @@ Welcome to iostar✨
 <br>   
 
 ## Applications   
+* [Basic settings](#basic-settings)   
+
 * [Dice](#dice)   
 
 * [Xylophone](#xylophone)   
@@ -28,6 +30,10 @@ Welcome to iostar✨
 * [Quiz](#quiz)   
 
 * [Weather](#weather)    
+
+<br>
+
+### Basic settings   
 
 <br>
 

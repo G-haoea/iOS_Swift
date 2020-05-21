@@ -1,14 +1,56 @@
 Welcome to iostar✨
 ===
+
 ### If there is such a thing to make every second of life trace, here are some of traces.     
 <br>
 
 ## Clues  
-* [Swift](https://github.com/iii17-grace/ios_Swift/wiki/swift)      
+* [Swift](#swift)      
 
-* [BUG](https://github.com/iii17-grace/ios_Swift/wiki/BUG)         
+* [Bug](#bug)          
 
-* [Applications](https://github.com/iii17-grace/ios_Swift/wiki)  
+* [Applications](#applications)   
+<br>
+
+## Swift   
+
+<br>   
+
+## Bug   
+
+<br>   
+
+## Applications   
+* [Dice](#dice)   
+
+* [Xylophone](#xylophone)   
+
+* [Quiz](#quiz)   
+
+* [Weather](#weather)    
+
+<br>
+
+### Dice  
+
+<br>   
+
+### Xylophone   
+
+<br>  
+
+### Quiz  
+
+<br>
+
+
+### Weather  
+
+<br>
+
+
+
+
 
 
 

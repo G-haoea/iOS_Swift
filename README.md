@@ -23,6 +23,8 @@ Welcome to iostar✨
 ## Applications   
 * [Basic settings](#basic-settings)   
 
+* [Constraints](#constraints)   
+
 * [Dice](#dice)   
 
 * [Xylophone](#xylophone)   
@@ -100,6 +102,10 @@ This is about how to create a project when entering Xcode. Some basic settings a
     -Click Connect via network;  
     
     Tips: no matter what errors or fails appear, just follow what it asks like disconnect and reconnect again.   
+
+<br>
+
+### Constraints   
 
 <br>
 

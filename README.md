@@ -293,61 +293,64 @@ Welcome to iostar✨
     -The actions claims are the another protocol(**CLLocationManagerDelegate**);      
    
 
-* Some function approriates Xcode to show it whenever the app appears:  
-```swift  
-override func viewWillAppear(_ animated: Bool) {
+* **`Some function appropriates Xcode to show it when the app appears`**     
+  ```swift  
+     override func viewWillAppear(_ animated: Bool) {
         <#code#>
-    }   
-```
+     }   
+  ```
 
-* when the device wants to use the location, device may request the agreement from the device:   
-```swift
-locationManager.requestWhenInUseAuthorization()
-```
-
-* set accuracy:   
-```swift
-locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters`: set accuracy; 
-```   
+* **`When the device wants to use the location, device may request the agreement from the device`**       
+    -Device may request the agreement from the device;    
+    -`locationManager.requestWhenInUseAuthorization()`;     
+   
+* **`Set accuracy of location`**       
+    -`locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters`;      
   
-* request for location, there is description when click this one - request one-time/all the time(we can change it):   
-```swift
-locationManager.requestLocation()
-```
+* **`Request for location`**     
+    -There is a description when click this one - request one-time/all the time(we can change it);      
+    -`locationManager.requestLocation()`;    
 
-* ***A class has 3 parameter: property, method, actions***, here, we discuss **delegate**:   
-```swift
-class ViewController: UIViewController, CLLocationManagerDelegate{}
-```   
-Delegate is the same usage as Interface, just method name, no details.  
-All optional method can be chosen optional, other are must be used;      
 
-* diduplocation is used after we want to requestLocation, it means if we use requestLocation, it will use diduplocation:   
-```swift
-func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        <#code#>
-    }//all requests are stored in an array - [CLLocation] which concerns latitude & longitude;  
-```   
+* **`A class has 3 parameters: property, method, actions`**    
+  
+* **`delegate`**  
+    -Delegate is the same usage as **Interface**, just method name, no details;    
+    -All optional method can be chosen optional, others are must be used;     
+  ```swift    
+     class ViewController: UIViewController, CLLocationManagerDelegate{
+     }
+  ```    
 
-* get current position's lat and lon:   
- `let lat = locations[0].coordinate.latitude`   
- `let lon = locations[0].coordinate.longitude`
-  **Remember** add this line into viewdidload: locationManager.delegate = self;   
+* **`didUplocation`**    
+    -It is used after we want to **requestLocation**;    
+    -It means if we use **requestLocation**, it will use **didUplocation**;        
+  ```swift
+     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+          <#code#>
+     }
+     //all requests are stored in an array - [CLLocation] which concerns latitude & longitude;  
+  ```     
 
-* dictionary:   
-  `let dict : [String: String] = ["name":"Grace", "age":"12", "gender":"female"]`(key:value)      
+* **`Get current position's lat and lon`**        
+    -`let lat = locations[0].coordinate.latitude`;       
+    -`let lon = locations[0].coordinate.longitude`;    
+    -**Remember** to add this line into **viewdidload**: `locationManager.delegate = self`;        
 
-* we can get one of array's value by arr[0], we can get one of dictionary's value by dict["name"], I mean `dict[key] = value`   
+* **`dictionary`**       
+    -(key:value): `let dict : [String: String] = ["name":"Grace", "age":"12", "gender":"female"]`;     
+    -We can get one of an array by 'arr[index]', we can get one of dictionary's value by `dict["name"]`;    
+    -`dict[key] = value`;    
+    -It can be set as `[String:Any]` that means `"name":Grace` but `"age":12` is also allowed, the value can be any variables;    
+* **`SwiftyJSON`**   
+    -If we want to analyse **JSON** which we get from api, we can use **SwiftyJSON** on cocoapod;     
+    -When we use **SwiftyJSON** to anaylse, we need to get value;   
+    -`.String`: if the value of "name" is null, the whole one maybe null;   
+    -`.StringValue`: it will be a ' ', not null;   
 
-* We can set dictionary as [String:Any] like "name":Grace, but "age":12(all keys are String, but value are not only string, it can be any variables)   
-
-* if we want to analyse JSON which we get from api, we can use **SwiftyJson** on cocoapod;   
-
-* when we use SwiftyJSON to anaylse, the next route for getting value `.String` means if "name" is null, the whole one maybe null. `.StringValue` means it will be just a ' 'then null;  
-
-* Computed variable:  
-  the variable of this type cannot be detected automatically, so we need to give variables as a original value,  
-```swift
+* **`Computed variable`**     
+    -The variable of this type cannot be detected automatically, so we need to give variables as a original value;      
+  ```swift
   var iconName:String{
       //the value of this iconName will change when the other changes;   
         switch (condition) {
@@ -358,65 +361,46 @@ func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:
         default:
             return: "sunny"
   } 
-```   
+  ```   
 
-* round(): 4 throw, 5 add;   
+* **`round()`**
+    -4 throw, 5 add;      
 
-* we can create an extention viewcontroller outside of the main viewcontroller to avoid inconvenience of the huge code;   
+* **`extention`**   
+    -We can create an extention viewcontroller outside of the main viewcontroller to avoid inconvenience of the confusing code;        
 
-* there will be a **prepare** method on the second viewcontroller About segue;   
+* **`prepare in second viewController on segue`**    
+    -There will be a **prepare** method on the second **viewController** about **segue**;       
 
-* how to switch one controller to another one:   
-```swift
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+* **`Switch one controller to another one`**       
+  ```swift
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "selectCity"{
             segue.destination as! SelectCityController
         }
     }
-```
+  ```
 
-* as   as!   as?    :   
-  `Int(3.2)   =    3.2 as Int`- up transfer, from sub to father;   
-  `as! and as?` = down transfer, from father to son, one is must, one is optional - **upcasting**;   
+* **`as   as!   as?`**    
+    -`Int(3.2)   =    3.2 as Int`: Up transfer, from sub to father;     
+    -`as! and as?`: Down transfer, from father to son, one is must, one is optional - **upcasting**;        
 
-*   Individual delegate:  
-```swift
-protocol SelectCityDelegate {
-    func didChangeCity()
-}
-var delegate:SelectCityDelegate?
-@IBAction func changeCityBtn(_ sender: Any) {
-        delegate?.didChangeCity()
-    }
-vc.delagate = self; 
-```
+* **`Individual delegate`**      
+  ```swift
+     protocol SelectCityDelegate {
+           func didChangeCity()
+     }
+     var delegate:SelectCityDelegate?
+     @IBAction func changeCityBtn(_ sender: Any) {
+           delegate?.didChangeCity()
+     }
+     vc.delagate = self; 
+  ```
 
-* let current page disapper:  `dismiss(animated: true, completion: nil)`   
-
-* 
-  
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
+* **`Let current page disapper`**     
+    -`dismiss(animated: true, completion: nil)`   
 
 <br>   
 

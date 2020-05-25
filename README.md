@@ -14,6 +14,369 @@ Welcome to iostar✨
 
 ## Swift   
 
+* **`var indexL: Int = 0`**   
+    -Claim a variable with **Int**;     
+
+* **`indexL = Int.random(in:1...6)`**      
+    -Generate a random **Int** from 1 to 6 by "...";     
+
+* **`print(indexL)`**     
+    -When running the project, check whether the action did as the code shows in console by **print**;      
+
+* **`var str = "hello"`**     
+    -If the variable can be clearly recognised after "=", it don't need to claim the variable as the first line shows;     
+    -It is the same as `var indexL = 0`;     
+
+* **`command delete`**     
+    -When move the mouse on the last of current line, it can delete the whole line;     
+
+* **`command shift enter`**      
+    -When open a **background** not **create a project** on Xcode, it can run the pure code without UIview or simulator;      
+
+* **`let name = "grace"`**     
+    -It is same as **final string**;    
+    -The value of which **let** claims cannot be changed;   
+    -It cannot **assign** to value that 'name' is **constant**;    
+    -It needs less and less and less storage than ordinary variables;       
+    -We can claim the variable as **let** at the beginning, if we need to change its value, change it after then;            
+
+* **`let fullName = "\(name) liu"`**      
+    -**"name"** is another varible with **let** which contains the value of "grace";     
+
+* **`let flag: Bool = false`**   
+    -**Bool** not boolean;  
+
+* **`let mini = 3.14`**      
+    -It will be **double**, because it will directly recognise it as double;    
+    -But if we do not know the details of this variable, we should claim **double** though;        
+
+* **`diceImageViewL.image = UIImage(named = "dice-\(indexL)"`**     
+    -Change diceimageViewL's imageView into dice-X;   
+
+* **`let diceArray = ["dice-1", "dice-2", "dice-3", "dice-4", "dice-5", "dice-6"]`**    
+    -An array with String;      
+    -`diceImageViewL.image = UIImage(named = diceArray[indexL]`;           
+       
+* **`func methodName() {}`    
+    -Claim a function;     
+
+* **`Tells the receiver that a motion event has ended.`**     
+  ```swift  
+     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+              code
+     }
+  ```   
+    -**`motion`**: An event-subtype constant indicating the kind of motion. A common motion is shaking, which is indicated by `UIEvent.EventSubtype.motionShake`;   
+    -**`event`**: An object representing the event associated with the motion;     
+
+* **`Hard Code`**
+    -E.g. print(1x) can only print 1x, cannot print 2x, so it is hard code;      
+    -If we want to print 2x/3x, etc. Use the parameter in the method();    
+
+* **`function`**    
+  ```swift
+     func getMilk (nums: Int, total: Int) {
+          total = nums * 5
+          print(\(nums))
+          print("Buy \(nums) bottles of milk needs \(total) pounds.")
+     }  
+  ```   
+    -Think more than twice about the license of the parameters -> nums: Int;    
+    -`let rest = getMilk(nums: 2, total: 100)`;      
+ 
+
+* **`The type for return variable is **->Int**`**   
+  ```swift   
+     func getMilk (nums: Int) -> Int {
+          return 0
+     }
+  ```    
+ 
+* **`if-else`**    
+  ```swift   
+     func textSimilar (herName: String, hisName: String, num: Int) -> String {
+          if nums > 80 {  
+             return "Up"   
+          }else if nums > 40 && nums <=80{  
+             return "Mid"
+          }else{  
+             return "Down"
+          }   
+  ```
+
+* **`round(double)`**    
+    -Focus on a double variable value into 4cut5add **BUT** will return a double as well like 22 
+**.0**;   
+
+* **`pow(2, 3)`**    
+    -2^3 = 2x2x2;     
+
+* **`loop`**    
+  ```swift    
+     let nums = [1,2,7,4,3]`  
+     for num in nums {
+         print(num)
+     }
+  ```    
+    -It will print 1,2,7,4,3 is the same as for the below in java      
+  ```java  
+     for(int item:arrayName){
+         System.out.println(item);
+     } 
+  ```    
+    -The basic principle is:    
+  ```swift   
+     var num = nums[0]
+     print(\(num))
+     num = nums[1]
+     print (\(num))
+     then ...
+   ```   
+
+* `for num in 1...10{}`: is the same as for(int i=0; i<=10; i++){};  
+  `1..<10`: 10 is open, so the range is 1-9;  
+  `1>..10`: 1 is open, so the range is 2-10;  
+
+* `for i in 1...10 where i % 2 == 0 {print(i) or  print("now has \(i)")}`: will print 2,4,6,8,10 is same as for(int i=1; i<=10; i++) {if i % 2 == 0   print(i) };   
+  (pay attention:`print("has \(i-1) iphones")`
+
+* `(1...10).reversed()`: change 1->10 into 10->1;  
+
+* `func calSong (howmany total: Int) {}` -> `calSong(howmany: 10)` -> **howmany** is the name to use, but **total** is the name to run in the code, it is gurantee the frequency of different meaning of function target (which is focus on foreigner? anyway, don't mention it);  
+  **So** it will leads to:  
+  when `func calSong (_ total: Int){}` -> `calSong(10)` -> we don't need to write variable name in calSong method when want to use it, but it is mostly used in original apple documental;    
+ 
+
+* `@IBAction func touchKeys (_ sender: UIBotton) {}`: the first "_" is the meaning of null parameter outside method which we have mentioned before, like the parameter which we use it on the process of using the method and gave a name of parameter;   
+  **sender** means the object which send this command, UIButton shows the sender is a UIBotton, it is the same as `@IBOutlet weak var btn: UIButton`, the sender is the **btn** in some of the meanings;   
+
+* `if send.tag == 1 {}`  
+
+* `import Foundation`is everything we can use in the .swift, which after we created a .swift file it will appear;  
+
+* `import UIKit` is a more bigger package than **Foundation**, it contains Foundation;  
+
+* initialise a class:  
+```swift
+  init(text: String, ans: Bool) {
+       quesText = text
+       quesAns = ans
+  }    
+```
+* judge:  
+```swift
+var name = (flag ? "yes" : "no")
+```
+* `nil` is the same as `null` in java/c/etc.  
+
+* int to string:   `String(IntVariableName)`   
+  string to int:   `Int(StringVariableName)`   
+
+* set button's corner:  
+  `layer.cornerRadius - Number - 23`   
+
+* set label's corner:
+  as what done as button's, then **clip to bounds**  
+
+* **control + option + command + enter**: open assistant on right;  
+
+* **command = **: let the text in label can fit into the content;  
+
+* **stack view**  
+
+* only stack view has hug and compress, we should set the priority of these two properties, to avoid the condition that when the width of stack view has been confirmed, how to deal with the priority of two horizontal labels (high number has high priority);  
+
+* **constraint to margin**: all setting is for **margin**;  
+
+* four elements for confirming a thing on storyboard: x/y/width/height;   
+
+* **Multipller** means the radio of self:superView(or other element);  
+
+* **Autoshrink**: shrink the font as what you wanted, like minimum font size or minimum font scale;  
+
+* **enum**:   
+  ```swift
+  enum Type{
+       case apple
+       case orange
+       case banana
+  }
+  var type = Type.banana
+  //var type:Type = .banana
+
+* a non-parameter constructor:  
+```swift
+  convenience init(){
+       init(name: "hello", seats: 2, type: .sports)
+  }
+or
+  convenience init(name: String){
+       init(name: "hello", seats: 2, type: .sports)
+  }
+```
+Then we can use two approaches to init;
+
+* inherit:  
+```swift
+   class Tesla:Car{
+}
+```
+Tesla is son, Car is father   
+
+* Override:  
+```swift
+   class fish:animal{
+       override func breathe (){
+             super.breathe()
+             //do sth. here
+       }
+  }   
+```   
+
+* **optional**like ? or !:  
+  `var destination:String?` -> at the beginning, there is no initialise value for it;   
+
+* if we want to use destination into print which we have mention above, we need to use `destination!` as a **wrap action **or `nil`;  
+  (but if we have not give destination a value, we print it, the code will crush, because there is no value for destination, but we try to **wrap** which means forced to figure out "?")   
+
+*  how can we use destination? as a code:**iflet**   
+```swift
+   if let dest = destination{ 
+        print(dest)
+   }
+```    
+   so we don't need to use destination! every time;
+
+* apple has their own position package: import **CoreLocation**;  
+
+* let locationManager = CLLocationManager() //we can find the current location   
+  **There is no actions in CLLocationManager, the actions claims are in another protocol(CLLocationManagerDelegate) - delegate which will discuss below**       
+
+* Some function approriates Xcode to show it whenever the app appears:  
+```swift  
+override func viewWillAppear(_ animated: Bool) {
+        <#code#>
+    }   
+```
+
+* when the device wants to use the location, device may request the agreement from the device:   
+```swift
+locationManager.requestWhenInUseAuthorization()
+```
+
+* set accuracy:   
+```swift
+locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters`: set accuracy; 
+```   
+  
+* request for location, there is description when click this one - request one-time/all the time(we can change it):   
+```swift
+locationManager.requestLocation()
+```
+
+* ***A class has 3 parameter: property, method, actions***, here, we discuss **delegate**:   
+```swift
+class ViewController: UIViewController, CLLocationManagerDelegate{}
+```   
+Delegate is the same usage as Interface, just method name, no details.  
+All optional method can be chosen optional, other are must be used;      
+
+* diduplocation is used after we want to requestLocation, it means if we use requestLocation, it will use diduplocation:   
+```swift
+func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        <#code#>
+    }//all requests are stored in an array - [CLLocation] which concerns latitude & longitude;  
+```   
+
+* get current position's lat and lon:   
+ `let lat = locations[0].coordinate.latitude`   
+ `let lon = locations[0].coordinate.longitude`
+  **Remember** add this line into viewdidload: locationManager.delegate = self;   
+
+* dictionary:   
+  `let dict : [String: String] = ["name":"Grace", "age":"12", "gender":"female"]`(key:value)      
+
+* we can get one of array's value by arr[0], we can get one of dictionary's value by dict["name"], I mean `dict[key] = value`   
+
+* We can set dictionary as [String:Any] like "name":Grace, but "age":12(all keys are String, but value are not only string, it can be any variables)   
+
+* if we want to analyse JSON which we get from api, we can use **SwiftyJson** on cocoapod;   
+
+* when we use SwiftyJSON to anaylse, the next route for getting value `.String` means if "name" is null, the whole one maybe null. `.StringValue` means it will be just a ' 'then null;  
+
+* Computed variable:  
+  the variable of this type cannot be detected automatically, so we need to give variables as a original value,  
+```swift
+  var iconName:String{
+      //the value of this iconName will change when the other changes;   
+        switch (condition) {
+        case 0...100:
+            return "cloudy"
+        case 100...200:
+            return "fog"
+        default:
+            return: "sunny"
+  } 
+```   
+
+* round(): 4 throw, 5 add;   
+
+* we can create an extention viewcontroller outside of the main viewcontroller to avoid inconvenience of the huge code;   
+
+* there will be a **prepare** method on the second viewcontroller About segue;   
+
+* how to switch one controller to another one:   
+```swift
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "selectCity"{
+            segue.destination as! SelectCityController
+        }
+    }
+```
+
+* as   as!   as?    :   
+  `Int(3.2)   =    3.2 as Int`- up transfer, from sub to father;   
+  `as! and as?` = down transfer, from father to son, one is must, one is optional - **upcasting**;   
+
+*   Individual delegate:  
+```swift
+protocol SelectCityDelegate {
+    func didChangeCity()
+}
+var delegate:SelectCityDelegate?
+@IBAction func changeCityBtn(_ sender: Any) {
+        delegate?.didChangeCity()
+    }
+vc.delagate = self; 
+```
+
+* let current page disapper:  `dismiss(animated: true, completion: nil)`   
+
+* 
+  
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
 <br>   
 
 ## Bug    

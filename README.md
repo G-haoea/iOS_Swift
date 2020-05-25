@@ -105,8 +105,7 @@ Welcome to iostar✨
   ```
 
 * **`round(double)`**    
-    -Focus on a double variable value into 4cut5add **BUT** will return a double as well like 22 
-**.0**;   
+    -Focus on a double variable value into 4cut5add **BUT** will return a double as well like 22 **.0**;   
 
 * **`pow(2, 3)`**    
     -2^3 = 2x2x2;     
@@ -132,69 +131,102 @@ Welcome to iostar✨
      print (\(num))
      then ...
    ```   
+   
+* **`The original loop`**        
+    ```swift
+       for num in 1...10{  
+           print(num)
+       }
+    ```     
+    -It will print 1,2,3,...,10 as what java shows:    
+    ```java     
+       for(int i=1; i<=10; i++) {
+           System.out.println(i);
+       }
+     ```    
+     
+* **`Fixed scope`**    
+    -`1..<10`: 10 is open, so the range is 1-9;    
+    -`1>..10`: 1 is open, so the range is 2-10;      
 
-* `for num in 1...10{}`: is the same as for(int i=0; i<=10; i++){};  
-  `1..<10`: 10 is open, so the range is 1-9;  
-  `1>..10`: 1 is open, so the range is 2-10;  
+* **`Add condition on loop`**    
+    ```swift
+       for i in 1...10 where i % 2 == 0 {
+             print(i)
+             print("The current number is \(i)")
+       }
+    ```     
+    -It will print 2,4,6,8,10 which is same as what java show:    
+    ```java   
+       for(int i=1; i<=10; i++) {
+           if(i % 2 == 0) {
+                  System.out.println(i);    
+           }
+       }
+    ```    
 
-* `for i in 1...10 where i % 2 == 0 {print(i) or  print("now has \(i)")}`: will print 2,4,6,8,10 is same as for(int i=1; i<=10; i++) {if i % 2 == 0   print(i) };   
-  (pay attention:`print("has \(i-1) iphones")`
+* **`(1...10).reversed()`**    
+    -Change 1->10 into 10->1;    
 
-* `(1...10).reversed()`: change 1->10 into 10->1;  
+* **`How to use methods`**    
+  ```swift    
+     func calSong (howmany total: Int) {
+     }
+     
+     calSong(howmany: 10)
+  ```    
+    -**`howmany`**: It is the name to use;    
+    -**`total`**: It is the name to run in the code;    
+    -`Target`: To guarantee the frequency of different meaning of function target, which is focus on foreigner? Anyway, don't mention it;      
+    -If we don't care foreigner language:    
+    ```swift    
+       func calSong (_ total: Int) {
+       }
+       
+       calSong(10)   
+    ```    
 
-* `func calSong (howmany total: Int) {}` -> `calSong(howmany: 10)` -> **howmany** is the name to use, but **total** is the name to run in the code, it is gurantee the frequency of different meaning of function target (which is focus on foreigner? anyway, don't mention it);  
-  **So** it will leads to:  
-  when `func calSong (_ total: Int){}` -> `calSong(10)` -> we don't need to write variable name in calSong method when want to use it, but it is mostly used in original apple documental;    
- 
+* **`IBAction of UIButton`**     
+  ```swift   
+     @IBAction func touchKeys (_ sender: UIBotton) {
+     }
+  ```    
+    -**`_`**: The meaning of null parameter outside method which we have mentioned before. It is the parameter name which when we use this method and give a name of this parameter;    
+    -**`sender`**: It is the sender of this action, the same as the object which sends this command. It is equal to what shows as follows that sender is **btn**:        
+    ```swift    
+       @IBOutlet weak var btn: UIButton    
+       @IBAction func touchKeys (_ sender: btn) {    
+       }    
+    ```   
+    
+* **`if send.tag == 1 {}`**    
+  
+* **`import Foundation`**     
+    -It is everything we can use in the .swift, which after we created a .swift file it will appear;     
 
-* `@IBAction func touchKeys (_ sender: UIBotton) {}`: the first "_" is the meaning of null parameter outside method which we have mentioned before, like the parameter which we use it on the process of using the method and gave a name of parameter;   
-  **sender** means the object which send this command, UIButton shows the sender is a UIBotton, it is the same as `@IBOutlet weak var btn: UIButton`, the sender is the **btn** in some of the meanings;   
+* **`import UIKit`**      
+    -It is a more wide package than **Foundation**, it contains Foundation;    
 
-* `if send.tag == 1 {}`  
-
-* `import Foundation`is everything we can use in the .swift, which after we created a .swift file it will appear;  
-
-* `import UIKit` is a more bigger package than **Foundation**, it contains Foundation;  
-
-* initialise a class:  
-```swift
+* **`Initialise a class`**        
+  ```swift
   init(text: String, ans: Bool) {
        quesText = text
        quesAns = ans
   }    
-```
-* judge:  
-```swift
-var name = (flag ? "yes" : "no")
-```
-* `nil` is the same as `null` in java/c/etc.  
+  ```   
 
-* int to string:   `String(IntVariableName)`   
-  string to int:   `Int(StringVariableName)`   
+* **`Judge then give a value`**       
+    -`var name = (flag ? "yes" : "no")`;              
 
-* set button's corner:  
-  `layer.cornerRadius - Number - 23`   
+* **`nil`**    
+    -It is the same as `null` in java/c/etc.;       
 
-* set label's corner:
-  as what done as button's, then **clip to bounds**  
+* **`Transfer variable type`**    
+    -Int to String: `String(IntVariableName)`;      
+    -String to Int: `Int(StringVariableName)`;        
 
-* **control + option + command + enter**: open assistant on right;  
 
-* **command = **: let the text in label can fit into the content;  
-
-* **stack view**  
-
-* only stack view has hug and compress, we should set the priority of these two properties, to avoid the condition that when the width of stack view has been confirmed, how to deal with the priority of two horizontal labels (high number has high priority);  
-
-* **constraint to margin**: all setting is for **margin**;  
-
-* four elements for confirming a thing on storyboard: x/y/width/height;   
-
-* **Multipller** means the radio of self:superView(or other element);  
-
-* **Autoshrink**: shrink the font as what you wanted, like minimum font size or minimum font scale;  
-
-* **enum**:   
+* **`enum`**      
   ```swift
   enum Type{
        case apple
@@ -204,53 +236,62 @@ var name = (flag ? "yes" : "no")
   var type = Type.banana
   //var type:Type = .banana
 
-* a non-parameter constructor:  
-```swift
+* **`A non-parameter constructor`**  
+  ```swift
   convenience init(){
        init(name: "hello", seats: 2, type: .sports)
-  }
-or
+  }    
+  
+  or
+  
   convenience init(name: String){
        init(name: "hello", seats: 2, type: .sports)
   }
-```
-Then we can use two approaches to init;
+  ```
+    -Then we can use two approaches to init;   
 
-* inherit:  
-```swift
-   class Tesla:Car{
-}
-```
-Tesla is son, Car is father   
+* **`inherit`**      
+    -Tesla is son, Car is fater;    
+  ```swift   
+     class Tesla:Car{  
+     }  
+  ```    
 
-* Override:  
-```swift
+* **`Override`**      
+  ```swift
    class fish:animal{
        override func breathe (){
              super.breathe()
              //do sth. here
        }
   }   
-```   
+  ```     
 
-* **optional**like ? or !:  
-  `var destination:String?` -> at the beginning, there is no initialise value for it;   
+* **`optional`**    
+    -Like ? or !;     
+    -`var destination:String?`;    
+    -It means at the beginning, there is no initialise value for it;      
+    -If we want to use **destination** into print which we have mention above, we need to use `destination!` as a **wrap action** or `nil`;    
+    
+    -Tips: But if we have not give **destination** a value, we print it, the code will crush, because there is no value for **destination**, but we try to **wrap** which means forced to figure out "?";       
 
-* if we want to use destination into print which we have mention above, we need to use `destination!` as a **wrap action **or `nil`;  
-  (but if we have not give destination a value, we print it, the code will crush, because there is no value for destination, but we try to **wrap** which means forced to figure out "?")   
-
-*  how can we use destination? as a code:**iflet**   
-```swift
+* **`Use 'destination?' as a code`**    
+    -if let;    
+  ```swift
    if let dest = destination{ 
         print(dest)
    }
-```    
-   so we don't need to use destination! every time;
+  ```   
+    -So we don't need to use **destination!** every time;     
 
-* apple has their own position package: import **CoreLocation**;  
+* **`import CoreLocation`**    
+    -Apple's own position package;       
 
-* let locationManager = CLLocationManager() //we can find the current location   
-  **There is no actions in CLLocationManager, the actions claims are in another protocol(CLLocationManagerDelegate) - delegate which will discuss below**       
+* **`Get the current location`**    
+    -`let locationManager = CLLocationManager()`    
+    -There is no actions in CLLocationManager;    
+    -The actions claims are the another protocol(**CLLocationManagerDelegate**);      
+   
 
 * Some function approriates Xcode to show it whenever the app appears:  
 ```swift  
@@ -641,7 +682,33 @@ This is about how to create a project when entering Xcode. Some basic settings a
 * **`Remove the object from a stack view`**  
     -Just move them out of the stack view;   
     **or**    
-    -Choose unembed;   
+    -Choose unembed;     
+
+* **`stack view`**      
+    -Only stack view has hug and compress, we should set the priority of these two properties, to avoid the condition that when the width of stack view has been confirmed, how to deal with the priority of two horizontal labels (high number has high priority);    
+
+* **`constraint to margin`**    
+    -All setting is for **margin**;    
+
+* **`Multipller`**   
+    -It means the ratio of self:superView(or other element);    
+
+* **`Autoshrink`**   
+    -Shrink the font as what you wanted, like minimum font size or minimum font scale;    
+
+* **`Set button's corner`**       
+    -Add property - layer.cornerRadius - Number - 23;        
+
+* **`Set label's corner`**    
+    -As what done as button's, then **clip to bounds**;     
+
+* **`control + option + command + enter`**    
+    -Open assistant on right;    
+
+* **`command =`**    
+    -Let the text in label can fit into the content;       
+
+
    
 <br>
 

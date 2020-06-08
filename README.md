@@ -696,7 +696,74 @@ This is about how to create a project when entering Xcode. Some basic settings a
    
 <br>
 
-### Dice  
+### Dice    
+**TODO**   
+* User get different values of two dices in this game application;       
+* When user first log in, a random combination appears;    
+* Chick button then the values of two dices change automatically;    
+* User can shake iPhone for getting new values of two dices as well;              
+     
+**POINT**    
+* `Int.random()` from `.h` method to generate a random value;     
+     
+**STEP**       
+* **`Add icon images into Assets`**     
+    -Move app icons into folder directly;     
+    -Move other images into the list of `Assets` in Xcode;   
+    -Adjust images' size by **canva** and **appicon**;     
+        
+* **`Add objects into storyboard`**       
+    
+* **`Constraints`**    
+    -Set background fill the whole screen to fit different devices;    
+    -Other objects are set by ratio due to different screen's sizes;  
+    
+* **`Stack View`**   
+    -Combine two imageView which contains diceImage into one **stackView**;    
+  
+* **`layer.cornerRadius`**    
+    -For button should `Click to Bounds`;    
+    -For others don't need to click above one;    
+ 
+* **`Claim @IBOutlet for imageViews`**       
+
+* **`Claim @IBAction for button`**    
+
+* **`An independent function for updating dices`**   
+    ```swift    
+       func updateDice() {
+            indexL = Int.random(in: 0...5)
+            indexR = Int.random(in: 0...5)
+            diceL.image = UIImage(named: diceArray[indexL])
+            diceR.image = UIImage(named: diceArray[indexR])
+       }
+    ```    
+* **`Put diceImages's name into an Array`**    
+    ```swift  
+       let diceArray = ["dice-1", "dice-2", "dice-3", "dice-4", "dice-5", "dice-6"]
+       
+       var indexL = 0
+       var indexR = 0       
+    ```    
+    
+* **`Add a function for shaking by google shake apple document`**    
+    ```swift    
+       override func motionEnded(_ motion: UIEvent.EventSubtype,
+                     with event: UIEvent?) {
+             updateDice()   
+       }      
+     ```        
+  
+* **`shake on simulator`**    
+    -Device - shake;    
+    -`control + command + Z`;     
+     
+       
+    
+    
+    
+  
+  
 
 <br>   
 

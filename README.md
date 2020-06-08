@@ -697,7 +697,8 @@ This is about how to create a project when entering Xcode. Some basic settings a
 <br>
 
 ### Dice   
-[https://github.com/iii17-grace/ios_Swift/tree/master/Dice](https://github.com/iii17-grace/ios_Swift/tree/master/Dice)      
+[https://github.com/iii17-grace/ios_Swift/tree/master/Dice](https://github.com/iii17-grace/ios_Swift/tree/master/Dice)    
+    
 **TODO**   
 * User get different values of two dices in this game application;       
 * When user first log in, a random combination appears;    

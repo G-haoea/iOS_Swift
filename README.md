@@ -766,22 +766,90 @@ This is about how to create a project when entering Xcode. Some basic settings a
   
 * **`shake on simulator`**    
     -Device - shake;    
-    -`control + command + Z`;     
-     
-       
-    
-    
-    
-  
-  
+    -`control + command + Z`;    
 
 <br>   
 
-### Xylophone   
+### Xylophone    
+[https://github.com/iii17-grace/ios_Swift/tree/master/Xylophone](https://github.com/iii17-grace/ios_Swift/tree/master/Xylophone)    
+    
+**TODO**   
+* The keys in application are regarded as 7 keys in keyboard;           
+* When user click different keys, iPhone will display different sounds;     
+     
+**POINT**    
+* **`tag`**          
+    -Set different keys button with different values of tags;    
+    -Programme can find these different button by tags;        
+
+* **`import AVFoundation`**             
+    -It contains `AVAudioPlayer`;     
+     
+**STEP**   
+* **`Add objects into storyboard`**         
+    -7 buttons;        
+
+* **`Set constraints`**           
+    -The same height can only be displayed after the Y position is confirmed;     
+    
+* **`Set tags`**   
+
+* **`Set basic environment for player`**    
+    ```swift    
+       import AVFoundation    
+    ```      
+
+* **`Claim a player`**    
+    ```swift    
+       var player : AVAudioPlayer!         
+    ```     
+
+* **`Claim @IBAction for different buttons`**    
+    -Combine different keys into this one @IBAction;     
+    ```swift    
+       @IBAction func click(_ sender: UIButton) {
+             playMusic(tag: sender.tag)
+       }    
+    ```     
+ 
+* **`Achieve playing music by clicking different keys`**      
+    ```swift   
+       func playMusic(tag: Int){
+            let url = Bundle.main.url(forResource: "note\(tag)", withExtension: "wav")
+        
+            do{
+                player = try AVAudioPlayer(contentsOf: url!)
+                player.play()
+            }catch{
+                print(error)
+            }
+        }   
+    ```      
+    
+  
+    
 
 <br>  
 
-### Quiz  
+### Quiz   
+[https://github.com/iii17-grace/ios_Swift/tree/master/Quiz](https://github.com/iii17-grace/ios_Swift/tree/master/Quiz)    
+    
+**TODO**   
+*       
+*              
+     
+**POINT**    
+* **``**    
+    -   
+
+* **``**     
+    -  
+     
+**STEP**   
+* **``**    
+    -   
+
+* **``**     
 
 <br>
 

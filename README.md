@@ -33,6 +33,10 @@ Welcome to iostar✨
 * **`command shift enter`**      
     -When open a **background** not **create a project** on Xcode, it can run the pure code without UIview or simulator;      
 
+* **`command option [`**     
+    -Move the whole line codes up;    
+    -`]` means move the whole line codes down;    
+
 * **`let name = "grace"`**     
     -It is same as **final string**;    
     -The value of which **let** claims cannot be changed;   
@@ -835,6 +839,152 @@ This is about how to create a project when entering Xcode. Some basic settings a
 [https://github.com/iii17-grace/ios_Swift/tree/master/Quiz](https://github.com/iii17-grace/ios_Swift/tree/master/Quiz)    
     
 **TODO**   
+* There has a data base which contains several questions;          
+* User can do this quiz and then get the score;    
+* The bottom of this application shows the progress bar and only the progress by text;    
+* Current score will display in the bottom of screen which located on right part;    
+* After completing all questions, an alert will display to ask whether user want to try again;    
+     
+**POINT**    
+* **`MVC = Model + View + Controller`**     
+    -User wants to do sth.;    
+    -Tell (view)Controller;    
+    -(view)Controller tells model;    
+    -Model asks for data;    
+    -Then back to (view)Controller;     
+    -Finally, shows on View;       
+   
+* **`OOP = Object + Oriented + Program`**      
+
+* **`Group files`**     
+    -Developer can create many groups without folders to tidy up complex files;    
+ 
+* **`alert from apple document`**   
+
+* **`Progress Bar`**   
+  
+     
+**STEP**   
+* **`Add objects into storyboard`**    
+    -Question label;    
+    -Two buttons with true and false;    
+    -A stack view combined with two lable: complete and score;    
+    -progress view = progress bar;    
+
+* **`Assign files into different group`**    
+    -MVC;     
+    
+* **`Create new .swift file in model folder`**    
+    -Here are data in order to support the whole programme(MVC);    
+    -A class claim here with class **QuesAndAns** which contains **quesText** and **quesAns**;    
+
+* **`Put initial questions into an array`**    
+    ```swift    
+       let questions = [
+                QuesAndAns(text: "1+1=2", ans: true),
+                QuesAndAns(text: "1+1=3", ans: false),
+                QuesAndAns(text: "1+2=3", ans: true)
+       ]     
+    ```    
+    
+* **`Set the original display when entering the application firstly`**     
+    ```swift    
+       override func viewDidLoad() {
+            super.viewDidLoad()
+            // Do any additional setup after loading the view.
+        
+            questionLabel.text = questions[0].quesText
+            completeLabel.text = "Comlete:1/\(questions.count)"
+            scoreLabel.text = "Score: 0"
+            progressBar.progress = 1 / Float(questions.count)
+        
+        }     
+    ```     
+
+* **`What will do when click button with tag in different button`**      
+    ```swift    
+       @IBAction func button(_ sender: UIButton) {
+        
+            curAns = sender.tag == 1 ? true : false
+            corAns = questions[curQues].quesAns
+            checkAns()
+            updateUI()
+        
+       }     
+    ```     
+
+* **`checkAns()`**   
+    -Get `curScore` and `sumScore`;  
+    ```swift    
+       func checkAns() {
+            curScore = curAns == corAns ? 10 : 0
+            sumScore += curScore
+        
+       }    
+    ```     
+
+* **`updateUI()`**    
+    -Update `scoreLabel`;   
+    -Move to `nextQuestion()`;   
+    ```swift    
+        func checkAns() {
+             curScore = curAns == corAns ? 10 : 0
+             sumScore += curScore
+        
+        }     
+    ```     
+
+* **`nextQuestion()`**    
+    -Judge whether it is the last question first;    
+    -If it isn't the last question, update relative information;     
+    ```swift    
+       func nextQues() {
+            curQues += 1
+            if curQues < questions.count{
+                 questionLabel.text = questions[curQues].quesText
+                 completeLabel.text = "Complete: \(curQues + 1)/\(questions.count)"
+                 progressBar.progress = Float(curQues + 1) / Float(questions.count)
+            
+            }else{
+                endToBegin()
+            }
+        }    
+     ```    
+     
+* **`endToBegin()`**    
+    -Return to first page when entering into this application;    
+    -Use **alert** to pop a text for asking whether user wants to try again;   
+    ```swift    
+       func endToBegin() {
+        
+            let alert = UIAlertController(
+                            title: "Congratulations!", 
+                            message: "Do you want to try again?", 
+                            preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes, try again!", style: .default, handler: { _ in
+                    self.curQues = 0
+                    self.sumScore = 0
+                    self.questionLabel.text = self.questions[0].quesText
+                    self.completeLabel.text = "Comlete:1/\(self.questions.count)"
+                    self.scoreLabel.text = "Score: 0"
+                    self.progressBar.progress = 1 / Float(self.questions.count)
+           
+             }))
+        
+             self.present(alert, animated: true, completion: nil)
+        
+       }     
+
+
+
+
+<br>
+
+
+### Weather  
+[https://github.com/iii17-grace/ios_Swift/tree/master/Weather](https://github.com/iii17-grace/ios_Swift/tree/master/Weather)    
+    
+**TODO**   
 *       
 *              
      
@@ -849,12 +999,7 @@ This is about how to create a project when entering Xcode. Some basic settings a
 * **``**    
     -   
 
-* **``**     
-
-<br>
-
-
-### Weather  
+* **``**  
 
 <br>
 

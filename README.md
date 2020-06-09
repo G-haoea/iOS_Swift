@@ -706,7 +706,15 @@ This is about how to create a project when entering Xcode. Some basic settings a
 * User can shake iPhone for getting new values of two dices as well;              
      
 **POINT**    
-* `Int.random()` from `.h` method to generate a random value;     
+* **`Int.random()`**    
+    -From `.h` method to generate a random value;     
+
+* **`command + D`**     
+    -ctrl c + ctrl v = copy a same one;     
+
+* **`Two interactive View`**              
+    -`visible view`: static ImageView like logo, etc.       
+    -`interactive view`: dynamic view like button, etc. can interactive with users, it will give a feedback to users like a respond or some other actions to achieve any goals;    
      
 **STEP**       
 * **`Add icon images into Assets`**     

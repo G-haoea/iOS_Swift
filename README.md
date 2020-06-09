@@ -859,10 +859,16 @@ This is about how to create a project when entering Xcode. Some basic settings a
 * **`Group files`**     
     -Developer can create many groups without folders to tidy up complex files;    
  
-* **`alert from apple document`**   
+* **`Alert from apple document`**   
 
-* **`Progress Bar`**   
-  
+* **`Progress Bar`**      
+    -`progressBar.frame.size.width = view.frame.width`:         
+    -With frame means developer can correct its value;     
+    -The above approach is for progressBar's progress is 0, we adjust the length of the bar, not the progress, through correcting the length of bar to show the progress;    
+        
+    -`progressBar.progress = Float (view.fram.width / 3)`:      
+    -It shows the correct progress;  
+    
      
 **STEP**   
 * **`Add objects into storyboard`**    
@@ -973,7 +979,9 @@ This is about how to create a project when entering Xcode. Some basic settings a
         
              self.present(alert, animated: true, completion: nil)
         
-       }     
+       }      
+       
+
 
 
 

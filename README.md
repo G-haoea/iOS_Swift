@@ -1016,7 +1016,14 @@ This is about how to create a project when entering Xcode. Some basic settings a
     
 * **`Protocol`**    
     -It is more likely the same as **Interface** in java;     
-    -There is just the name of the method, no details to achieve the methods;    
+    -There is just the name of the method, no details to achieve the methods;  
+    -First: claim a procotol;    
+    -Second: var delegate in selectCityViewController;    
+    -Third: Trigger when click change city button - IBAction;    
+
+* **`Dictionary`**    
+    -To store some data;    
+
     
      
 **STEP**   

@@ -1,3 +1,273 @@
+### Weather  
+[https://github.com/iii17-grace/ios_Swift/tree/master/Weather](https://github.com/iii17-grace/ios_Swift/tree/master/Weather)   
+      
+**TODO**   
+* When users enter the application, it will show current city's weather, temperature, and city's name;            
+* User can switch city which user wants to know;     
+* The condition of weather will display as a temperature as well as an image;     
+     
+**POINT**    
+* **`cocoapods`**   
+    -It is a platform for developer to storage different packages;     
+    -Developer can find more comleted API or codes to achieve any functions;    
+    -Any functions which has been developed can be found in the homepage of **cocoapods.com**;     
+
+* **`Alamofire`**        
+    -It is a nice tool for developer to get weather API;    
+    
+* **`Action segue`**   
+    -When user click an button, a segue will appear;    
+    -It is not another page, it just like the notification page;    
+    -It is independent with other pages;    
+
+* **`Delegate`**   
+    -Allocate works to workers;    
+    
+* **`Protocol`**    
+    -It is more likely the same as **Interface** in java;     
+    -There is just the name of the method, no details to achieve the methods;    
+    
+     
+**STEP**   
+* **`Add object into the 1st storyboard`**      
+    -A button for switching city;    
+    -A label for displaying temperature;     
+    -A label for displaying current city;    
+    -An imageView for displaying the current weather condition;     
+
+* **`Claim objects(labels) as a variable`**   
+
+* **`import CoreLocation for managing iPhone's location`**     
+    -`import CoreLocation`;    
+
+* **`Give a background or licence (Delegate) to viewController`**   
+    ```swift    
+       extension ViewController: CLLocationManagerDelegate{
+       }     
+    ```     
+
+* **`Let locationManager knows who is its agent`**    
+    ```swift    
+       locationManager.delegate = self    
+    ```    
+
+* **`Set locationManager's accuracy`**    
+    ```swift      
+       locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters     
+    ```        
+    -Higher accuracy with more power requirement;     
+
+* **`Request User's location at the beginnning`**    
+    ```swift    
+       locationManager.requestLocation()   
+    ```    
+
+* **`viewDidAppear()`**      
+    -Once the page appears, it runs;    
+    -`viewDidLoad()` means what happened when the application is opened the first time;    
+    ```swift    
+       override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            locationManager.requestWhenInUseAuthorization()
+       }     
+    ```     
+    -Ask for user whether it is allowed to request location like:    
+    -**Allow to use location while in the use/always/never** on iPhone;   
+    
+* **`What system will do when app wants to request location`**   
+    ```swift    
+       func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            let lat = locations[0].coordinate.latitude
+            let lon = locations[0].coordinate.longitude
+            print(lat, lon)
+            let paras = ["lat":"\(lat)", "lon":"\(lon)", "appid":"\(appid)"]
+            getWeather(paras: paras)
+        }    
+    ```  
+    -If there has an error when applying for position:     
+    ```swift    
+       func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+            print(error)
+       }    
+    ```     
+
+* **`Create a podfile using cocoaPods`**    
+    -Because of some problems of cocoaPods, the podfile cannot be created by application directly;    
+    -Terminal - cd folder - pop init;    
+    -Open cocoaPods - `command O` - open popfile;     
+ 
+* **`import Alamofire in cocoaPods`**    
+    -`pod 'SVProgressHUD'`;      
+    -`pod 'Alamofire'`;     
+    -`pod 'SwiftyJSON'`;    
+
+* **`getWeather() by applying for API from weather by Alamofire`**   
+    ```swift    
+       func getWeather(paras:[String:String]){
+            AF.request("https://httpbin.org/get", parameters: paras).responseJSON { response in
+                if let json = response.value{
+                    let JSONWeather = JSON(json)
+                    self.createWeather(JSONWeather: JSONWeather)
+                    self.updateUI()
+                }
+            }
+        
+        }      
+    ```    
+
+* **`Create a class to store weather object`**    
+    ```swift   
+       class Weather {
+            var temp = 0
+            var city = ""
+            var condition = 0
+    
+            var icon : String{
+                switch (condition) {
+                        case 0...300 : return "tstorm1"
+                        case 301...500 : return "light_rain"
+                        case 501...600 : return "shower3"
+                        case 601...700 : return "snow4"
+                        case 701...771 : return "fog"
+                        case 772...799 : return "tstorm3"
+                        case 800 : return "sunny"
+                        case 801...804 : return "cloudy2"
+                        default : return "dunno"
+                 }
+             }
+        }     
+    ```   
+    -It is based on weather website API introduction;    
+
+* **`createWeather() to create a weather object through JSON which has been replied`**    
+    ```swift    
+       func createWeather(JSONWeather: JSON) {
+            weather.city = JSONWeather["name"].stringValue
+            weather.condition = JSONWeather["weather", 0,"id"].intValue
+            weather.temp = Int(round(JSONWeather["main", "temp"].doubleValue - 273.15))
+        }
+    ```    
+    -The temperature should be transferred into original format, so - 273.15 to ˚;    
+    
+* **`updateUI()`**    
+    ```swift   
+       func updateUI() {
+            cityLabel.text = weather.city
+            tempLabel.text = "\(weather.temp)˚"
+            weatherImage.image = UIImage(named: "\(weather.icon)")
+       }    
+    ```    
+    
+* **`Remember to give description in Info.plist`**     
+    -`Privacy - Location When In Use Usage Description`;     
+    -A description for why it needs location;   
+
+* **`Add segue for selecting city page`**   
+    -Create a new **viewController**;    
+    -Add objects: **TextField** and **Button** in a stackView;   
+    -Connect 1st switch button with this segue page;    
+    -Set segue's identifier as **selectCity**;     
+
+* **`Set for segue type`**   
+    -`show`    
+    -If NaigationController exists, the Controller which segue connects will be pushed in navigation stack, the new viewController has return button, click then return back;   
+    
+    -`show Detail`   
+    -No matter NavigationController exists, it will not be pushed into stack, it just replaces the current view, there is no return button, it will show contents in Detail area;    
+    
+    -`Present Modally`   
+    -It is not pushed into stack as well, like the view which move from button into above, more likely to be regarded as an alert/login in field. User cannot interactive with last view, unless close this view;     
+    
+    -`Present As Popover`   
+    -Don't push into stack as well, like a downCrash menu, when click other area out of this area, this target view controller will disappear in ipad. But in iphone, this area will fill out the whole screen;      
+
+* **`Protocol by creating a delegate for segue page to didChangeCity()`**    
+    ```swift   
+       import UIKit
+       
+       protocol SelectCityDelagte {
+            func didChangeCity(city: String)
+       }     
+    ```     
+
+* **`Give didChangeCity() details in viewController.swift`**   
+    ```swift    
+       func didChangeCity(city: String) {
+            weather.city = city
+            let paras = ["q":"\(weather.city)", "appid":"d838c529dbd89a6de2937fe3829a17dc"]
+            getWeather(paras: paras)
+       }    
+    ```     
+
+* **`Create a new class selectCityController which is a subClass of UIViewController`**    
+    -Set segue belongs to **SelectCityController** first on the right navigation part;     
+    ```swift   
+       class SelectCityController: UIViewController {
+       
+                    var delegate : SelectCityDelegate?
+                    
+                    @IBOutlet weak var cityInputField: UITextField!
+                                 
+                    @IBAction func returnBtn(_ sender: Any) {
+                            dismiss(animated: true, completion: nil)
+                    }
+                    
+                    @IBAction func searchBtn(_ sender: Any) {
+                            delegate?.didChangeCity(city: cityInputField.text!)
+                            dismiss(animated: true, completion: nil)
+                    }
+                    
+                    override func viewDidLoad() {
+                            super.viewDidLoad()
+                            // Do any additional setup after loading the view.
+                    }
+        }     
+     ```    
+
+* **`Prepare() method for communicate data from 1st page to 2nd page`**     
+    ```swift   
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+            if segue.identifier == "selectCity"{
+                let vc = segue.destination as! SelectCityController
+                vc.delegate = self
+     
+            }
+       }     
+    ```     
+
+
+
+     
+
+
+   
+
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Welcome to iostar✨
 ===
 

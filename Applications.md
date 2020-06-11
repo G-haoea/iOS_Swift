@@ -1,3 +1,18 @@
+## Table of contents             
+* [Dice](#Dice)     
+
+* [Xylophone](#Xylophone)      
+
+* [Quiz](#Quiz)      
+
+* [Weather](#Weather)    
+
+<br>
+
+
+
+
+
 ### Dice   
 [https://github.com/iii17-grace/ios_Swift/tree/master/Dice](https://github.com/iii17-grace/ios_Swift/tree/master/Dice)    
     

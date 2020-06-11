@@ -5,30 +5,21 @@ Welcome to iostar✨
 <br>
 
 ## Clues  
-* [Swift](#swift)      
+* Swift    
+  [https://github.com/iii17-grace/ios_Swift/edit/master/Swift.md](https://github.com/iii17-grace/ios_Swift/edit/master/Swift.md)           
 
-* [Bug](#bug)          
+* Bug        
+  [https://github.com/iii17-grace/ios_Swift/edit/master/Bug.md](https://github.com/iii17-grace/ios_Swift/edit/master/Bug.md)         
+* Applications     
+  [https://github.com/iii17-grace/ios_Swift/edit/master/Applications.md](https://github.com/iii17-grace/ios_Swift/edit/master/Applications.md)       
+  
+* [Basic settings](#basic-settings)      
 
-* [Applications](#applications)   
-<br>
+* [Constraints](#constraints)      
 
-
-
-
-## Applications   
-* [Basic settings](#basic-settings)   
-
-* [Constraints](#constraints)   
-
-* [Dice](#dice)   
-
-* [Xylophone](#xylophone)   
-
-* [Quiz](#quiz)   
-
-* [Weather](#weather)    
 
 <br>
+
 
 ### Basic settings   
 This is about how to create a project when entering Xcode. Some basic settings are considered as well.    

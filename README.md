@@ -6,12 +6,12 @@ Welcome to iostar✨
 
 ## Clues  
 * Swift    
-  [https://github.com/iii17-grace/ios_Swift/edit/master/Swift.md](https://github.com/iii17-grace/ios_Swift/edit/master/Swift.md)           
+  [https://github.com/iii17-grace/ios_Swift/blob/master/Swift.md](https://github.com/iii17-grace/ios_Swift/blob/master/Swift.md)           
 
 * Bug        
-  [https://github.com/iii17-grace/ios_Swift/edit/master/Bug.md](https://github.com/iii17-grace/ios_Swift/edit/master/Bug.md)         
+  [https://github.com/iii17-grace/ios_Swift/blob/master/Bug.md](https://github.com/iii17-grace/ios_Swift/blob/master/Bug.md)         
 * Applications     
-  [https://github.com/iii17-grace/ios_Swift/edit/master/Applications.md](https://github.com/iii17-grace/ios_Swift/edit/master/Applications.md)       
+  [https://github.com/iii17-grace/ios_Swift/blob/master/Applications.md](https://github.com/iii17-grace/ios_Swift/blob/master/Applications.md)       
   
 * [Basic settings](#basic-settings)      
 

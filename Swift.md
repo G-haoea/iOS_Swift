@@ -390,6 +390,31 @@
   ```
 
 * **`Let current page disapper`**     
-    -`dismiss(animated: true, completion: nil)`   
+    -`dismiss(animated: true, completion: nil)`     
+    
+* **`Let different cell show different content by indexPath`**   
+    -`cell.todoTextLabel.text = todos[indexPath.row].text`     
+
+* **`Let the arrow become the first responder as blingbling`**   
+    -`todoInput.becomeFirstResponder()`    
+
+* **`Let the Navigation Controller pop any other controller`**     
+    -`navigationController?.popViewController(animated: true)`    
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>   

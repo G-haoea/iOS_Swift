@@ -123,7 +123,11 @@
   
 * #### `Exception	NSException *	"attempt to insert row 3 into section 0, but there are only 3 rows in section 0 after the update"	0x0000600000382850`   
   **`Reason`**:  The number of rows have been confirmed as a fix value: 3;   
-  **`Solution`**: We need to change it into a flexible value: **todos.count**;  
+  **`Solution`**: We need to change it into a flexible value: **todos.count**;    
+
+* #### `Cannot override 'strong' property with 'weak' property`     
+  **`Reason`**: The name which we set for outlet is the same with the Xcode self-variable;    
+  **`Solution`**: Change a name;    
   
 
 

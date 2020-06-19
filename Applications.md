@@ -5,7 +5,9 @@
 
 * [Quiz](#Quiz)      
 
-* [Weather](#Weather)    
+* [Weather](#Weather) 
+
+* [Todos](#Todos)    
 
 <br>
 
@@ -553,6 +555,226 @@
 
 
 <br>
+
+
+### Todos  
+[https://github.com/iii17-grace/ios_Swift/tree/master/Todos](https://github.com/iii17-grace/ios_Swift/tree/master/Todos)    
+    
+**TODO**   
+* This application is more likely to record what to do;     
+* User can add, edit, multi-remove, order todo tasks;                    
+     
+**POINT**    
+* **`TableViewController`**    
+    -The traditional ViewController is replaced by TableViewController;       
+    
+* **`struct`**   
+    -It is similar with class;    
+    -But there is no initialised;    
+    -It can only have `var text : ""`;    
+
+* **`Segue`**     
+    -A segue which for function 'add' is set by 'show';    
+
+* **`NavigationBar`**    
+    -It can be regarded as a box;    
+    -The main screen and segue will be pushed or poped from this 'stack box';     
+   
+* **`The process of TableView`**    
+    -iPhone just show what users can see;     
+    -The first cell will move to last one when user slides up the screen;    
+    -It improves quality;    
+     
+     
+**STEP**   
+* **`Add app icon`**      
+
+* **`Add TableViewController into storyboard with the below settings`**     
+    -Move arrow to TableViewController;    
+    -Delete original ViewController;    
+    -Give TableViewController a class name - **TodosController**;     
+    -Click **Inherit Module from Target**;    
+    -Choose TableView's style as 'Group' rather than 'Pain', just the beauty;    
+  
+* **`Create a TodosController.swift for above class name`**     
+    -In folder 'Controller';   
+    -Create 'cocoatouch class' rather than 'swift file';    
+    -Named `TodosController.swift`;    
+    -Delete original `ViewController.swift`;     
+
+* **`Save only one Table View Cell`**   
+    -Change Table View Cell's style into **Basic**;    
+    -Give TableViewCell a Identifier - **todos**;    
+    -Give TableViewCell a class name - **TodosCell**;   
+    -Click **Inherit Module from Target**;    
+
+* **`Create a TodosCell.swift for above class name`**    
+    -In folder 'Controller';   
+    -Create 'cocoatouch class' rather than 'swift file';    
+    -Named `TodosCell.swift`;     
+ 
+* **`Create a .swift class for items in Todos`**   
+    -Original Todo.swift in folder 'Model';     
+    ```swift     
+       struct Todo{
+            var text = ""
+            var check = false
+       }     
+    ```       
+
+* **`Add initialised todos list`**   
+    -Change the section into **1**;    
+    -Change the rows number into **3**;   
+    ```swift    
+       var todos = [
+            Todo(text: "Drink water", check: false),
+            Todo(text: "Walk", check: false),
+            Todo(text: "Sleep on time", check: false)
+       ]    
+    ```   
+ 
+ * **`Change TableCell's Accessory into Detail Disclosure`**    
+ 
+ * **`Change TableCell's style into Custom`**    
+ 
+ * **`Add 2 labels in one cell`**  
+     -one for check;    
+     -one for text;     
+     -Combine them in a stack view;   
+     -Do contraints;  
+     -Do claim `@IBOulet` in TodosCell.swift;   
+ 
+ * **`Do initialised setting for cells`**    
+     ```swift    
+        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "todos", for: indexPath) as! TodosCell
+
+            // Configure the cell...
+            cell.todoTextLabel.text = todos[indexPath.row].text
+            cell.todoCheckLabel.text = todos[indexPath.row].check ? "✅" : "〇 "
+  
+            return cell
+        }    
+     ```      
+ 
+ * **`Select the row will change into ✅`**    
+     ```swift   
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+            todos[indexPath.row].check = !todos[indexPath.row].check
+            
+            let cell = tableView.cellForRow(at: indexPath) as! TodosCell
+            cell.todoCheckLabel.text = todos[indexPath.row].check ? "✅" : "〇 "
+            
+            tableView.deselectRow(at: indexPath, animated: true) 
+        }    
+     ```    
+ 
+ * **`Add a new TableViewController as add and edit page`**    
+     -Change TableView's content into **Static Cells**;    
+     -Save only one cell;    
+     -The section is set into 1;    
+     -Create a cocoatouch class and give it a class in right part;    
+     -Choose TableView's style as 'Group' rather than 'Pain', just the beauty;    
+     
+ 
+ * **`Embed the first TableViewController into a Navigation Controller`**     
+     -Change Navigation Bar with **Prefers Large Titles**;    
+ 
+ * **`Add a bar button item into the first TableViewController's Navigation item right part`**    
+     -Set its System Item as **Add**;    
+     -Others are: Edit, Done, Cancel, etc.;    
+     -Change Navigation Item's title as: **Task list**;    
+     -Set Back Button's name as: Cancel;    
+ 
+ * **`Connect Add(bar button item in first page) with second TableViewController as segue(show)`**    
+ 
+ * **`Add Navigation Item into second TableViewController`**    
+     -Set Large Title as: **Never**;     
+     -Set Title as: Add a task;     
+ 
+ * **`Add bar button item as Confirm into second TableViewController's right part`**    
+ 
+ * **`Do some setting in TodoController`**    
+     -Delete the number of sections and rolls;    
+     -Delete data part;    
+     -Add claim of Confirm button in TodoController: **@IBAction**;    
+ 
+ * **`Add a TextField into second TableViewController`**      
+     -Set contraints;   
+     -Border style: null;     
+     -Set font, etc.;  
+     -Claim in TodoController;    
+     
+ * **`Create a delegate for Todo to do sth.`**    
+     -Step 1:    
+     ```swift   
+        protocol TodoDelegate {
+            func didAdd(taskText: String)
+        }    
+     ```    
+     -Step 2:   
+     ```swift   
+        var delegate : TodoDelegate?    
+     ```    
+     -Step 3:     
+     ```swift    
+        @IBAction func confirmText(_ sender: UIBarButtonItem) {
+            if let inputText = todoInput.text, !inputText.isEmpty{
+                delegate?.didAdd(taskText: inputText)
+            }
+        }     
+     ```    
+     
+* **`Do function details in TodosController`**      
+    ```swift    
+       extension TodosController : TodoDelegate{
+            func didAdd(taskText: String) {
+                todos.append(Todo(text: taskText, check: false))
+                let indexPath = IndexPath(row: todos.count-1, section: 0)
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+       }     
+   ```    
+   
+* **`Set the segue from 1st to 2nd TableViewController a identifier: addTodo`**   
+    -Give details in prepare method;   
+    -Set row's number as: **todos.count**;    
+    ```swift    
+       if segue.identifier == "addTodo"{
+            let vc = segue.destination as! TodoController
+            vc.delegate = self
+       }     
+    ```    
+
+* **`Set the arrow become the first responder as blingbling`**     
+    -In TodoController's viewDidLoad;    
+    -`todoInput.becomeFirstResponder()`;    
+
+* **`Click confirm then return back 1st page`**         
+    -`navigationController?.popViewController(animated: true)`;    
+    
+
+ 
+     
+ 
+        
+     
+     
+   
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

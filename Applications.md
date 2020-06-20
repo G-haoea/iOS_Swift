@@ -754,14 +754,148 @@
 * **`Click confirm then return back 1st page`**         
     -`navigationController?.popViewController(animated: true)`;    
     
+* **`Add segue from ❕ to 2nd page`**  
+    -Set identifier as: **editTodo**;     
+    -Choose Accessory Details as: **Show**;    
 
- 
-     
- 
-        
-     
-     
-   
+* **`Set prepare in TodosController`**    
+    ```swift    
+       else if segue.identifier == "editTodo"{
+            let vc = segue.destination as! TodoController
+            vc.delegate = self
+       }    
+    ```     
+
+* **`Claim a variable to store editText in TodoController`**    
+    ```swift    
+       var editTodoInput : String?     
+       @IBAction func confirmText(_ sender: UIBarButtonItem) {
+            if let inputText = todoInput.text, !inputText.isEmpty{
+                if editTodoInput != nil {
+                    delegate?.didEdit(editTaskText: inputText)
+                }else{
+                    delegate?.didAdd(addTaskText: inputText)
+                }
+            }     
+            navigationController?.popViewController(animated: true)
+       }     
+    ```    
+    -Remember to change several claim name in protocol or TodosController;    
+
+* **`didEdit`**    
+    ```swift    
+       func didEdit(editTaskText: String) {
+       
+            todos[row].text = editTaskText
+            let indexPath = IndexPath(row: 0, section: 0)
+            let cell = tableView.cellForRow(at: indexPath) as! TodosCell
+            cell.todoTextLabel.text = todos[row].text
+       }     
+    ```     
+
+* **`Set prepare for segue with identifier(editTodo) in TodosController`**   
+    ```swift    
+       var row = 0
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            // Get the new view controller using segue.destination.
+            // Pass the selected object to the new view controller.
+            if segue.identifier == "addTodo"{
+                let vc = segue.destination as! TodoController
+                vc.delegate = self
+            }else if segue.identifier == "editTodo"{
+                let vc = segue.destination as! TodoController
+                vc.delegate = self
+            
+                let cell = sender as! TodosCell
+                row = tableView.indexPath(for: cell)!.row
+                vc.editTodoInput = cell.todoTextLable.text
+            }      
+       }     
+    ```     
+
+* **`Remove the cell using original code in TodosController`**     
+    ```swift    
+       todos.remove(at: indexPath.row)     
+    ```    
+
+* **`Change delete button's name into Remove`**  
+    -It can be easily found by: **deleteButtonConfirm**, then the code appears;     
+    ```swift    
+       override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+            return "Remove"
+       }     
+    ```    
+
+* **`Achieve multiple removing`**    
+    -Choose **Multiple selecting when editing** in TableView from storyboard;    
+    -In viewDidLoad():    
+    ```swift    
+       self.navigationItem.leftBarButtonItem = self.editButtonItem    
+    ```    
+    -Put all of things in didSelect into `if !isEditing{}`;    
+
+* **`Add multiple delete`**    
+    -Create a bar button item into Navigation Bar on TodosTableViewController;      
+    -Give a claim on TodosController.swift:    
+    ```swift    
+       @IBOutlet weak var multiDeleteBtn: UIBarButtonItem!    
+    ```   
+    -Override setEding:  
+    ```swift    
+       override func setEditing(_ editing: Bool, animated: Bool) {
+            super.setEditing(editing, animated: animated)
+            editButtonItem.title = isEditing ? "Done" : "Edit"
+            multiDeleteBtn.title = isEditing ? "Delete" : ""
+       }    
+    ```     
+    -Add the initialised setting on viewDidLoad:    
+    ```swift    
+       multiDeleteBtn.title = ""    
+    ```    
+
+* **`Add @IBAction for Delete button`**    
+    ```swift    
+       @IBAction func multiDelete(_ sender: UIBarButtonItem) {
+            if let indexPaths = tableView.indexPathsForSelectedRows{
+                for indexPath in indexPaths{
+                    todos.remove(at: indexPath.row)
+                }
+                tableView.beginUpdates()
+                tableView.deleteRows(at: indexPaths, with: .automatic)
+                tableView.endUpdates()
+            }
+       }     
+    ```     
+
+* **`Try to save data on cloud`**  
+    -Let Todo.swift with struct Todo **: Codable**;     
+    -In TodosController:    
+    ```swift    
+       func saveData(){
+            do{
+                let data = try JSONEncoder().encode(todos)
+                UserDefaults.standard.set(data, forKey: "todos")
+            }catch{
+                print(error)
+            }
+       }     
+    ```     
+    -After every gestures on array todos should have a saveData();    
+    -Add decode details in viewDidLoad():   
+    ```swift   
+        if let data = UserDefaults.standard.data(forKey: "todos"){
+            do{
+                todos = try JSONDecoder().decode([Todo].self, from: data)
+            }catch{
+                print(error)
+            }
+        }      
+    ```     
+* **`Change claim todos`**    
+    ```swift    
+       var todos : [Todo] = []     
+    ```    
+
 
 <br>
 

@@ -400,6 +400,11 @@
 
 * **`Let the Navigation Controller pop any other controller`**     
     -`navigationController?.popViewController(animated: true)`    
+
+* **`Delete an item from an array`**   
+    -`todos.remove(at: indexPath.row)`     
+
+* **``**   
         
     
 

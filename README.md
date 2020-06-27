@@ -1,7 +1,7 @@
-Welcome to iostar✨
+Welcome to iOStar✨
 ===
 
-### If there is such a thing to make every second of life trace, here are some of traces.     
+### If there is such a thing to make every second of CLOCK trace, here are some of traces.     
 <br>
 
 ## Clues  

@@ -1,13 +1,13 @@
 ## Table of contents             
-* [Dice](#Dice)     
+* [Dice🎲](#Dice)     
 
-* [Xylophone](#Xylophone)      
+* [Xylophone🎹](#Xylophone)      
 
-* [Quiz](#Quiz)      
+* [Quiz❓](#Quiz)      
 
-* [Weather](#Weather) 
+* [Weather☁️](#Weather) 
 
-* [Todos](#Todos)    
+* [Todos✍️](#Todos)    
 
 <br>
 

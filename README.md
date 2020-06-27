@@ -18,4 +18,7 @@ Welcome to iOStar✨
 * [Constraints](https://github.com/iii17-grace/iOS_Swift/blob/master/Constraints.md)      
 
 
-<br>
+| Swift | Bug | Applications | Basic settings | Constraints |
+|-------|-----|--------------|----------------|-------------|
+| 💎    | ❌   | 🎨           | ⚙️             | 🔒          |
+

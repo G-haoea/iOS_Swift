@@ -13,7 +13,7 @@ Welcome to iOStar✨
 * Applications     
   [https://github.com/iii17-grace/ios_Swift/blob/master/Applications.md](https://github.com/iii17-grace/ios_Swift/blob/master/Applications.md)       
   
-* [Basic settings](https://github.com/iii17-grace/iOS_Swift/blob/master/Basic-settings.md)      
+* [Basic settings](https://github.com/iii17-grace/iOS_Swift/blob/master/Basic%20settings.md)      
 
 * [Constraints](https://github.com/iii17-grace/iOS_Swift/blob/master/Constraints.md)      
 

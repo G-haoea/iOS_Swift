@@ -1,4 +1,4 @@
-## Table of contents             
+# Table of contents             
 * [Dice🎲](#Dice)     
 
 * [Xylophone🎹](#Xylophone)      
@@ -15,17 +15,17 @@
 
 
 
-### Dice   
+# Dice   
 [https://github.com/iii17-grace/ios_Swift/tree/master/Dice](https://github.com/iii17-grace/ios_Swift/tree/master/Dice)    
 ![Dice.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Dice/Dice.gif)
     
-**TODO**   
+## TODO    
 * User get different values of two dices in this game application;       
 * When user first log in, a random combination appears;    
 * Chick button then the values of two dices change automatically;    
 * User can shake iPhone for getting new values of two dices as well;              
      
-**POINT**    
+# POINT     
 * **`Int.random()`**    
     -From `.h` method to generate a random value;     
 
@@ -36,7 +36,7 @@
     -`visible view`: static ImageView like logo, etc.       
     -`interactive view`: dynamic view like button, etc. can interactive with users, it will give a feedback to users like a respond or some other actions to achieve any goals;    
      
-**STEP**       
+# STEP       
 * **`Add icon images into Assets`**     
     -Move app icons into folder directly;     
     -Move other images into the list of `Assets` in Xcode;   
@@ -90,16 +90,16 @@
 
 <br>   
 
-### Xylophone    
+# Xylophone    
 [https://github.com/iii17-grace/ios_Swift/tree/master/Xylophone](https://github.com/iii17-grace/ios_Swift/tree/master/Xylophone)    
 <img src="https://github.com/iii17-grace/iOS_Swift/blob/master/Xylophone/Xylophone.png" width = "495" alt="Xylophone.png"><br/>
     
     
-**TODO**   
+## TODO      
 * The keys in application are regarded as 7 keys in keyboard;           
 * When user click different keys, iPhone will display different sounds;     
      
-**POINT**    
+## POINT    
 * **`tag`**          
     -Set different keys button with different values of tags;    
     -Programme can find these different button by tags;        
@@ -107,7 +107,7 @@
 * **`import AVFoundation`**             
     -It contains `AVAudioPlayer`;     
      
-**STEP**   
+## STEP   
 * **`Add objects into storyboard`**         
     -7 buttons;        
 
@@ -153,18 +153,18 @@
 
 <br>  
 
-### Quiz   
+# Quiz   
 [https://github.com/iii17-grace/ios_Swift/tree/master/Quiz](https://github.com/iii17-grace/ios_Swift/tree/master/Quiz)    
 ![Quiz.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Quiz/Quiz.gif)
     
-**TODO**   
+## TODO   
 * There has a data base which contains several questions;          
 * User can do this quiz and then get the score;    
 * The bottom of this application shows the progress bar and only the progress by text;    
 * Current score will display in the bottom of screen which located on right part;    
 * After completing all questions, an alert will display to ask whether user want to try again;    
      
-**POINT**    
+## POINT    
 * **`MVC = Model + View + Controller`**     
     -User wants to do sth.;    
     -Tell (view)Controller;    
@@ -189,7 +189,7 @@
     -It shows the correct progress;  
     
      
-**STEP**   
+## STEP      
 * **`Add objects into storyboard`**    
     -Question label;    
     -Two buttons with true and false;    
@@ -308,16 +308,16 @@
 <br>
 
 
-### Weather  
+# Weather  
 [https://github.com/iii17-grace/ios_Swift/tree/master/Weather](https://github.com/iii17-grace/ios_Swift/tree/master/Weather)   
 ![Weather.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Weather/Weather.gif)
       
-**TODO**   
+## TODO   
 * When users enter the application, it will show current city's weather, temperature, and city's name;            
 * User can switch city which user wants to know;     
 * The condition of weather will display as a temperature as well as an image;     
      
-**POINT**    
+## POINT    
 * **`cocoapods`**   
     -It is a platform for developer to storage different packages;     
     -Developer can find more comleted API or codes to achieve any functions;    
@@ -346,7 +346,7 @@
 
     
      
-**STEP**   
+## STEP   
 * **`Add object into the 1st storyboard`**      
     -A button for switching city;    
     -A label for displaying temperature;     
@@ -562,15 +562,15 @@
 <br>
 
 
-### Todos  
+# Todos  
 [https://github.com/iii17-grace/ios_Swift/tree/master/Todos](https://github.com/iii17-grace/ios_Swift/tree/master/Todos)    
 ![Todos.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Todos/Todos.gif)
     
-**TODO**   
+## TODO   
 * This application is more likely to record what to do;     
 * User can add, edit, multi-remove, order todo tasks;                    
      
-**POINT**    
+## POINT    
 * **`TableViewController`**    
     -The traditional ViewController is replaced by TableViewController;       
     
@@ -592,7 +592,7 @@
     -It improves quality;    
      
      
-**STEP**   
+## STEP   
 * **`Add app icon`**      
 
 * **`Add TableViewController into storyboard with the below settings`**     

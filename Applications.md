@@ -153,6 +153,7 @@
 
 ### Quiz   
 [https://github.com/iii17-grace/ios_Swift/tree/master/Quiz](https://github.com/iii17-grace/ios_Swift/tree/master/Quiz)    
+![Quiz.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Quiz/Quiz.gif)
     
 **TODO**   
 * There has a data base which contains several questions;          

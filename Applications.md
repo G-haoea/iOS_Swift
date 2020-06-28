@@ -17,7 +17,8 @@
 
 # Dice   
 [https://github.com/iii17-grace/ios_Swift/tree/master/Dice](https://github.com/iii17-grace/ios_Swift/tree/master/Dice)    
-![Dice.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Dice/Dice.gif)
+<img src="https://github.com/iii17-grace/iOS_Swift/blob/master/Dice/Dice.gif" width = "250" alt="Dice.gif"><br/>
+
     
 ## TODO    
 * User get different values of two dices in this game application;       
@@ -92,7 +93,7 @@
 
 # Xylophone    
 [https://github.com/iii17-grace/ios_Swift/tree/master/Xylophone](https://github.com/iii17-grace/ios_Swift/tree/master/Xylophone)    
-<img src="https://github.com/iii17-grace/iOS_Swift/blob/master/Xylophone/Xylophone.png" width = "495" alt="Xylophone.png"><br/>
+<img src="https://github.com/iii17-grace/iOS_Swift/blob/master/Xylophone/Xylophone.png" width = "250" alt="Xylophone.png"><br/>
     
     
 ## TODO      
@@ -155,7 +156,8 @@
 
 # Quiz   
 [https://github.com/iii17-grace/ios_Swift/tree/master/Quiz](https://github.com/iii17-grace/ios_Swift/tree/master/Quiz)    
-![Quiz.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Quiz/Quiz.gif)
+<img src="https://github.com/iii17-grace/iOS_Swift/blob/master/Quiz/Quiz.gif" width = "250" alt="Quiz.gif"><br/>   
+
     
 ## TODO   
 * There has a data base which contains several questions;          
@@ -310,8 +312,9 @@
 
 # Weather  
 [https://github.com/iii17-grace/ios_Swift/tree/master/Weather](https://github.com/iii17-grace/ios_Swift/tree/master/Weather)   
-![Weather.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Weather/Weather.gif)
-      
+<img src="https://github.com/iii17-grace/iOS_Swift/blob/master/Weather/Weather.gif" width = "250" alt="Weather.gif"><br/>   
+
+  
 ## TODO   
 * When users enter the application, it will show current city's weather, temperature, and city's name;            
 * User can switch city which user wants to know;     
@@ -564,8 +567,9 @@
 
 # Todos  
 [https://github.com/iii17-grace/ios_Swift/tree/master/Todos](https://github.com/iii17-grace/ios_Swift/tree/master/Todos)    
-![Todos.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Todos/Todos.gif)
-    
+<img src="https://github.com/iii17-grace/iOS_Swift/blob/master/Todos/Todos.gif" width = "250" alt="Todos.gif"><br/>   
+
+  
 ## TODO   
 * This application is more likely to record what to do;     
 * User can add, edit, multi-remove, order todo tasks;                    
@@ -793,7 +797,7 @@
        func didEdit(editTaskText: String) {
        
             todos[row].text = editTaskText
-            let indexPath = IndexPath(row: 0, section: 0)
+            let indexPath = IndexPath(row: row, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! TodosCell
             cell.todoTextLabel.text = todos[row].text
        }     

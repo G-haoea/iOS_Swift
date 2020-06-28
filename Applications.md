@@ -310,6 +310,7 @@
 
 ### Weather  
 [https://github.com/iii17-grace/ios_Swift/tree/master/Weather](https://github.com/iii17-grace/ios_Swift/tree/master/Weather)   
+![Weather.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Weather/Weather.gif)
       
 **TODO**   
 * When users enter the application, it will show current city's weather, temperature, and city's name;            
@@ -563,6 +564,7 @@
 
 ### Todos  
 [https://github.com/iii17-grace/ios_Swift/tree/master/Todos](https://github.com/iii17-grace/ios_Swift/tree/master/Todos)    
+![Todos.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Todos/Todos.gif)
     
 **TODO**   
 * This application is more likely to record what to do;     

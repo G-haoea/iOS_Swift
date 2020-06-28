@@ -25,7 +25,7 @@
 * Chick button then the values of two dices change automatically;    
 * User can shake iPhone for getting new values of two dices as well;              
      
-# POINT     
+## POINT     
 * **`Int.random()`**    
     -From `.h` method to generate a random value;     
 
@@ -36,7 +36,7 @@
     -`visible view`: static ImageView like logo, etc.       
     -`interactive view`: dynamic view like button, etc. can interactive with users, it will give a feedback to users like a respond or some other actions to achieve any goals;    
      
-# STEP       
+## STEP       
 * **`Add icon images into Assets`**     
     -Move app icons into folder directly;     
     -Move other images into the list of `Assets` in Xcode;   

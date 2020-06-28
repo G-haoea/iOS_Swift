@@ -17,6 +17,7 @@
 
 ### Dice   
 [https://github.com/iii17-grace/ios_Swift/tree/master/Dice](https://github.com/iii17-grace/ios_Swift/tree/master/Dice)    
+[Dice.gif](https://github.com/iii17-grace/iOS_Swift/blob/master/Dice/Dice.gif)
     
 **TODO**   
 * User get different values of two dices in this game application;       

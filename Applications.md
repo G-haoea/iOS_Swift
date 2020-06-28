@@ -92,6 +92,7 @@
 
 ### Xylophone    
 [https://github.com/iii17-grace/ios_Swift/tree/master/Xylophone](https://github.com/iii17-grace/ios_Swift/tree/master/Xylophone)    
+![Xylophone](https://github.com/iii17-grace/iOS_Swift/blob/master/Xylophone/Xylophone.png)
     
 **TODO**   
 * The keys in application are regarded as 7 keys in keyboard;           

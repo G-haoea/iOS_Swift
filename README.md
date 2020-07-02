@@ -1,5 +1,5 @@
 
-# Clues for iOStar✨
+# Clues for iOStar⛓
 
 | Swift | Bug | Applications | Basic settings | Constraints |
 |:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
